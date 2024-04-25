@@ -11,7 +11,7 @@ import (
 )
 
 func getDiff() (string, error) {
-	cmd := exec.Command("git", "diff")
+	cmd := exec.Command("git", "diff", "--staged")
 	diff, err := cmd.Output()
 	if err != nil {
 		return "", fmt.Errorf("cannot get diff: %v", err)
@@ -65,7 +65,7 @@ func fetch(url string, prompt string) (string, error) {
 }
 
 func getCommitMsg(diff string) (string, error) {
-	commitmsg, err := fetch("https://www.blackbox.ai/api/chat", fmt.Sprintf("For the following git diff, give me a good commit message:\n%s", diff))
+	commitmsg, err := fetch("https://www.blackbox.ai/api/chat", fmt.Sprintf("For the following git diff, give me a good commit message (only reply with the commit message, dont say anything else):\n%s", diff))
 	if err != nil {
 		return "", fmt.Errorf("cannot fetch commit message: %v", err)
 	}
