@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+COMMIT_MSG_FILE=$1
+.git/hooks/commitbuddy >> "$COMMIT_MSG_FILE"
