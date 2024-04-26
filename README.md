@@ -1,2 +1,2 @@
 # commitbuddy
-Generate a commit message based on git diff.
+Silly little git hook to generate a descent commit message using AI based on the git diff.
