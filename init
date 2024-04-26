@@ -6,6 +6,8 @@ if [ -d ".git" ]; then
     echo "Initializing commitbuddy..."
     curl -o .git/hooks/commitbuddy https://raw.githubusercontent.com/VedantWankhade/commitbuddy/master/bin/commitbuddy
     curl -o .git/hooks/prepare-commit-msg https://raw.githubusercontent.com/VedantWankhade/commitbuddy/master/prepare-commit-msg
+    chmod +x .git/hooks/commitbuddy
+    chmod +x .git/hooks/prepare-commit-msg
 else
     echo "Current directory is not a Git directory."
 fi
