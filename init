@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# check if the current dir is a git repo
+if [ -d ".git" ]; then
+    echo "The dir is a git repo..."
+    echo "Initializing commitbuddy..."
+    cp bin/commitbuddy prepare-commit-msg .git/hooks/
+else
+    echo "Current directory is not a Git directory."
+fi
